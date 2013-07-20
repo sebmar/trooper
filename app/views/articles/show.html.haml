@@ -1,0 +1,33 @@
+%table
+  %tr
+    %td
+      = @article.title
+      - if logged_in? 
+        %br
+        = link_to image_tag( 'delete.png' ), article_path(@article),confirm: "Are You Sure?", method: :delete
+        = link_to image_tag( 'edit.png' ), edit_article_path(@article)
+    %td
+      = @article.body
+
+%hr
+
+- @article.comments.each do |comment|
+  %h5
+    = comment.author
+    said:
+  %h4
+    ,,
+    = comment.body
+    ''
+  
+
+
+= form_for([@article, @article.comments.build]) do |f|
+
+  %p
+    = f.text_field :author, :value => 'your name'
+  %p
+    = f.text_area :body, :value => 'your comment'
+  %p
+    = f.submit
+

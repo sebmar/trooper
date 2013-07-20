@@ -1,0 +1,3 @@
+login: admin2
+password: password
+run rake db:seed

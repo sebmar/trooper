@@ -1,0 +1,17 @@
+
+%table
+  %tr
+    %th
+    %th User
+    %th Email
+    %th Actions
+  - @authors.each do |author|
+    %tr
+      %td
+      %td= link_to author.username, author
+      %td= author.email 
+      %td
+        = link_to image_tag( 'edit.png' ), edit_author_path(author)
+        = link_to image_tag( 'delete.png' ), author, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to '[new author]', new_author_path

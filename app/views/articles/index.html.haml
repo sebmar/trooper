@@ -1,0 +1,20 @@
+%table
+  
+    
+     
+  - @articles.reverse_each do |article|
+    %tr
+      %td
+        = link_to article.title, article_path(article)
+        %br
+        = link_to image_tag( 'delete.png' ), article_path(article),confirm: "Are You Sure?", method: :delete
+        = link_to image_tag( 'edit.png' ), edit_article_path(article)
+      %td= article.body 
+    %tr
+      %td
+      %td
+        = article.comments.count
+        comments
+
+
+
