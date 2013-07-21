@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
-   attr_accessible :title, :body, :tag_list, :image
+   attr_accessible :title, :body, :tag_list, :image, :author_id
+belongs_to :author
 has_many :taggings
 has_many :comments
 has_many :tags, through: :taggings

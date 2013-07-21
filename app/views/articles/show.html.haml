@@ -1,33 +1,40 @@
 %table
   %tr
     %td
-      = @article.title
+      = @article.title 
+      %br
+      %h7= @article.created_at
       - if logged_in? 
         %br
         = link_to image_tag( 'delete.png' ), article_path(@article),confirm: "Are You Sure?", method: :delete
         = link_to image_tag( 'edit.png' ), edit_article_path(@article)
     %td
       = @article.body
+  %tr
+    %td
+    %td='written by ' + @article.author.username 
 
 %hr
-
-- @article.comments.each do |comment|
-  %h5
-    = comment.author
-    said:
-  %h4
-    ,,
-    = comment.body
-    ''
+.bubble-list
+  - @article.comments.each do |comment|
+    .bubble.clearfix
+      =image_tag('trooper.jpeg')
+      .bubble-content
+        = comment.author
+        said:
+        %br
+        = comment.body
   
 
+#stylized.comment_form
+  = form_for([@article, @article.comments.build]) do |f|
 
-= form_for([@article, @article.comments.build]) do |f|
+    %p
+      = f.text_field :author, :value => 'your name'
+    %p
+      = f.text_area :body, :value => 'your comment'
+    %p
+      = f.submit
 
-  %p
-    = f.text_field :author, :value => 'your name'
-  %p
-    = f.text_area :body, :value => 'your comment'
-  %p
-    = f.submit
+
 

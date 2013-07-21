@@ -13,11 +13,10 @@ def new
 end
 
 def create
-  @article = Article.new(params[:article])
-  @article.save
+@article = current_user.articles.new(params[:article])
+@article.save
 flash.notice = "Article '#{@article.title}' Posted!"
-  redirect_to article_path(@article)
-
+redirect_to article_path(@article)
 end
 
 def destroy

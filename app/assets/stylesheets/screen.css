@@ -1,6 +1,6 @@
 @charset UTF-8;
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,h7,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
 border:0;
 outline:0;
 font-weight:inherit;
@@ -135,6 +135,12 @@ h6{/*linki w stopce*/
     line-height:1.5em;
 margin:.2em 0 .5em;
 }
+h7{/*linki w stopce*/
+    color:#5f5b5a;
+    font-size:0.6em;
+    line-height:1.5em;
+margin:.2em 0 .5em;
+}
 
 
 
@@ -190,34 +196,52 @@ height:12em;
 font-size:1em;
 }
 
-input[type=submit] {
-
-}
-.chatbox
-{
--moz-border-radius: 6px;
--webkit-border-radius: 6px;
-border-radius: 6px;
--moz-box-shadow: 2px 2px 2px #000000;
--webkit-box-shadow: 2px 2px 2px #000000;
-box-shadow: 2px 2px 2px #000000;
-filter: progid:DXImageTransform.Microsoft.Shadow(strength = 2, direction = 135, color = '#000000');
--ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength = 2, Direction = 135, Color = '#000000')";
-opacity: 0.32;
--ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 32);
-filter: alpha(opacity = 32);
+/* ----------- komentarze----------- */
+.comment_form{
+margin:0 auto;
+width:400px;
+padding:14px;
 }
 
+/* ----------- stylized ----------- */
 
-div.field_with_errors label {
-color:red;
-font-weight:700;
+#stylized p{
+font-size:11px;
+color:#aacfe4;
+margin-bottom:20px;
+padding-bottom:10px;
 }
 
-div.field_with_errors input {
-border:3px solid red;
+#stylized input{
+float:left;
+font-size: 1em;
 }
 
-input[type=submit],input[type=submit]:visited,input[type=submit]:hover,input[type=submit]:hover:visited,input[type=submit]:focus,input[type=submit]:focus:visited,input[type=submit]:active,input[type=submit]:active:visited {
-color:#fff;
+.clearfix {
+display: inline-block;
+
 }
+.bubble-list .bubble img {
+float:left;
+width:70px;
+height:70px;
+border:3px solid #ffffff;
+border-radius:10px;
+
+}
+.bubble-content {
+position:relative;
+float:left;
+margin:0 auto;
+width:400px;
+padding:0px 20px;
+border-radius:10px;
+background-color:#FFFFFF;
+box-shadow:1px 1px 5px rgba(0,0,0,.2);
+}
+
+.bubble {
+margin-top:20px;
+}
+
+
