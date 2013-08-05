@@ -1,4 +1,8 @@
 Blogger::Application.routes.draw do
+  get "static_pages/contact"
+
+  get "static_pages/about"
+
 root to: 'articles#index'
 resources :articles do
 	resources :comments
@@ -9,5 +13,6 @@ resources :author_sessions, only: [ :new, :create, :destroy ]
 
 match 'login'  => 'author_sessions#new'
 match 'logout' => 'author_sessions#destroy'
+match 'contact', :to => redirect('/static_pages/contact')
 
 end

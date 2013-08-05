@@ -8,7 +8,7 @@
         %br
         = link_to image_tag( 'delete.png' ), article_path(@article),confirm: "Are You Sure?", method: :delete
         = link_to image_tag( 'edit.png' ), edit_article_path(@article)
-    %td
+    %td 
       = @article.body
   %tr
     %td
@@ -18,12 +18,11 @@
 .bubble-list
   - @article.comments.each do |comment|
     .bubble.clearfix
-      =image_tag('trooper.jpeg')
+      =image_tag('commenter.png')
       .bubble-content
-        = comment.author
-        said:
+        %h7= comment.author + ' said:'
         %br
-        = comment.body
+        %h7= comment.body
   
 
 #stylized.comment_form

@@ -207,7 +207,6 @@ padding:14px;
 
 #stylized p{
 font-size:11px;
-color:#aacfe4;
 margin-bottom:20px;
 padding-bottom:10px;
 }
@@ -221,6 +220,7 @@ font-size: 1em;
 display: inline-block;
 
 }
+/* chmurki */
 .bubble-list .bubble img {
 float:left;
 width:70px;
