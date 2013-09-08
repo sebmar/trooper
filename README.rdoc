@@ -1,3 +1,2 @@
-login: admin2
-password: password
-run rake db:seed
+demo: 
+sithlord.pl
