@@ -4,6 +4,10 @@
       = @article.title 
       %br
       %h7= @article.created_at
+      %br
+      = image_tag ('1.png')
+      %br
+      %h7= 'written by ' + @article.author.username
       - if logged_in? 
         %br
         = link_to image_tag( 'delete.png' ), article_path(@article),confirm: "Are You Sure?", method: :delete
@@ -12,7 +16,7 @@
       = @article.body
   %tr
     %td
-    %td='written by ' + @article.author.username 
+    %td= @article.author.username 
 
 %hr
 .bubble-list
