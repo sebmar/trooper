@@ -1,0 +1,23 @@
+#stylized.comment_form
+  = form_for @message, :url => contact_path do |form|
+    %fieldset.fields
+      %p
+        = form.text_field :name, :value => 'your name'
+        %br
+      %p
+        = form.text_field :email, :value => 'email'
+        %br
+      %p
+        = form.text_field :subject, :value => 'subject'
+      %p
+        = form.text_area :body, :value => 'message'
+    %fieldset.actions
+      = form.submit "Send"
+
+
+
+
+
+
+
+

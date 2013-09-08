@@ -13,6 +13,9 @@ resources :author_sessions, only: [ :new, :create, :destroy ]
 
 match 'login'  => 'author_sessions#new'
 match 'logout' => 'author_sessions#destroy'
-match 'contact', :to => redirect('/static_pages/contact')
+
+match 'contact' => 'contact#new', :as => 'contact', :via => :get
+match 'contact' => 'contact#create', :as => 'contact', :via => :post
+#match 'contact', :to => redirect('/static_pages/contact')
 
 end

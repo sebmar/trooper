@@ -11,6 +11,19 @@ end
 
 module Blogger
   class Application < Rails::Application
+    config.action_mailer.smtp_settings = {
+  :address              => "smtp.gmail.com",
+  :port                 => 587,
+  :domain               => "sithlord.pl",
+  :user_name            => "sebmar1992",
+  :password             => "pepsi123",
+  :authentication       => :plain,
+  :enable_starttls_auto => true
+}
+
+config.action_mailer.default_url_options = {
+  :host => "sithlord.pl"
+}
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

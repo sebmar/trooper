@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title sebmar's blog
+    %title SITHLORD.PL | JOIN THE DARK SIDE
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -35,4 +35,7 @@
             - else
               = link_to "[login]", login_path
             /= link_to "[search by tags]", tags_path
+          %h5 
+            = 'Powered by'
+            = link_to 'Ruby on Rails', 'http://rubyonrails.org/'
   = render 'layouts/google' if Rails.env.production? 
