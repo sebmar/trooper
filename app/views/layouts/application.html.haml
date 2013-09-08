@@ -35,3 +35,4 @@
             - else
               = link_to "[login]", login_path
             /= link_to "[search by tags]", tags_path
+  = render 'layouts/google' if Rails.env.production? 
